@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>首页</title>
+    <!--样式文件引用-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet"><!--公共导航部分--->
+    <link href="css/index.css" rel="stylesheet" type="text/css"><!---my css--->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo"/>天问企业预约平台-医生端
+    <span class="wel">欢迎<span>xx</span>天问企业预约平台-医生端</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse"><iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="left.html?index" height="669" width="270"></iframe></div>
+    <div class="contentBox">
+        <div class="menulink">
+            <h2>  欢迎您进入天问医疗管理平台，请点击左侧菜单进行操作<h2>
+        </div>
+
+
+    </div>
+
+    <div class="ykfooter"><a href="#">帮助中心</a><span class="vertical">|</span><a href="#">关于我们</a><span class="vertical">|</span><a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span></div>
+
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/leftside.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        getdata();
+        getResult();
+        binNum()
+    });
+
+
+    function getResult(){
+        $(".refresh").click(function () {
+            getdata();
+            binNum()
+        })
+    }
+
+    function getdata(){
+        $(".fanguan").each(function(){
+            var gunid =$(this).find(".t_num").attr("id");
+            var nums = Number($("#"+gunid).attr("oldnumber"));
+            show_num(gunid,nums);
+        });
+    }
+
+    function show_num(gun,n){
+        $("#"+gun+" u").remove();
+        var it = $("#"+gun+" u");
+        var len = String(n).length;
+        for(var i=0;i<len;i++){
+            if(it.length<=i){
+                $("#"+gun).append("<u>0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</u>");
+            }
+            var num=String(n).charAt(i);
+            var y = -parseInt(num)*45;
+            var obj = $("#"+gun+" u").eq(i);
+            obj.animate({
+                        top :String(y)+'px'
+                    }, 'slow','swing',function(){}
+            );
+        }
+        $("#"+gun).attr("oldnumber",n)
+    }
+
+    function binNum() {
+        var bigNum = Number($("#t_num3").attr("oldnumber"));
+        if(bigNum > 99999){
+            $(".menulink .link3 .t_num u").addClass("active");
+        }
+    }
+
+</script>
+</body>
+</html>

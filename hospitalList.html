@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>分院列表</title>
+    <!--样式文件引用-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/hospitalList.css" rel="stylesheet" type="text/css">
+    <!---my css--->
+    <link href="css/zTreeStyle.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        img {
+            height: 180px;
+            width: 320px;
+        }
+        img.apr {
+            height: 120px;
+            width: 220px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="top">
+    <div class="left">天问企业预约平台-医生端<span class="wel">欢迎<span>xx</span>登录天问企业预约平台-医生端！</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="left.html?jglb" height="669" width="270"></iframe>
+    </div>
+
+    <div class="searchBox">
+
+        <div class="tankuang_left_bumen">
+            <div style="padding:10px 25px; border-bottom: solid 2px #e1e1e1;">
+                分院（机构）选择
+            </div>
+            <div class="ztree" id="entity"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="content" id="fenyuanInfo" style="height:690px;overflow-x: hidden;">
+
+            <div class="page-content" style="display:none;" id="nanshan">
+                <div class="hds">医院详情</div>
+                <div class="info">
+                    <div class="list">
+                        <p>医院名称：深圳南山分院</p>
+                    </div>
+                    <div class="list">
+                        <p>医院地址：<input type="text" disabled value="广东省深圳市南山区南海大道1036号"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>分院主图：<img src="images/yiyuan.jpg"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>服务电话：<input type="text" disabled value="0755-85550001"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>体检时间：<input type="text" disabled value="周一至周五8:00~17:00"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>休息时间：<input type="text" disabled value="周末双休"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>公交线路：<input type="text" disabled value="地铁2号蛇口线，公交79路"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>分院形象图：</p>
+                        <div class="clear"></div>
+                        <span><img class="apr" src="images/cmtj.jpg"></span>
+                        <span style="padding-left:15px;"><img class="apr" src="images/zxjk_01.jpg"></span>
+                        <span style="padding-left:15px;"><img class="apr" src="images/zxjk_02.jpg"></span>
+                    </div>
+
+                    <div class="list">
+                        <p>详情介绍：深圳市慈铭健康体检管理有限公司是慈铭集团旗下的全资子公司，在深圳、东莞设有五家体检中心，分别位于福田区车公庙、金融中心区、南山区桂庙路、深圳北站西广场、东莞市南城区，体检总面积超过一万两千平方米，并拥有大型专业流动体检车，可为客户提供“健康到家”的上门服务。 慈铭体检在国内首创独立酒店式体检场所、完全医检分离、全程个性服务、计算机程序管理的现代化专业体检模式，体检中心内部环境优雅、温馨舒适，拥有包括德国西门子DR影像系统、美国通用GE彩超、德国罗氏全自动电化学发光检测仪、日本奥林巴斯全自动生化仪、欧姆龙动脉硬化检测仪、丹麦电测听检测仪、全自动酶标仪、碳十三质谱分析仪等一流大型医疗诊断设备，为全面、快速、科学、准确地开展健康体检奠定了坚实的基础。 慈铭致力于为社会精英乃至社会大众提供高端专业的全方位健康管理服务，拥有一支以来自国内各大三甲医院的中高级技术人员为主力的健康体检专业队伍，秉承全心全意为人民健康服务的宗旨，努力实践“利己、利家、利国、利民”的企业理念，为深圳市民提供专业优质的健康体检服务。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content" style="display:none;" id="futian">
+                <div class="hds">分院（机构）详情</div>
+                <div class="info">
+                    <div class="list">
+                        <p>分院名称：深圳福田分院</p>
+                    </div>
+                    <div class="list">
+                        <p>分院地址：<input type="text" disabled value="广东省深圳市福田区车公庙地铁站A出口"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>分院主图：<img src="images/yiyuan.jpg"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>服务电话：<input type="text" disabled value="0755-85550001"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>体检时间：<input type="text" disabled value="周一至周五8:00~17:00"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>休息时间：<input type="text" disabled value="周末双休"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>公交线路：<input type="text" disabled value="地铁1号罗宝线，公交112路"></p>
+                    </div>
+
+                    <div class="list">
+                        <p>分院形象图：</p>
+                        <div class="clear"></div>
+                        <span><img class="apr" src="images/cmtj.jpg"></span>
+                        <span style="padding-left:15px;"><img class="apr" src="images/zxjk_01.jpg"></span>
+                        <span style="padding-left:15px;"><img class="apr" src="images/zxjk_02.jpg"></span>
+                    </div>
+
+                    <div class="list">
+                        <p>详情介绍：深圳市慈铭健康体检管理有限公司是慈铭集团旗下的全资子公司，在深圳、东莞设有五家体检中心，分别位于福田区车公庙、金融中心区、南山区桂庙路、深圳北站西广场、东莞市南城区，体检总面积超过一万两千平方米，并拥有大型专业流动体检车，可为客户提供“健康到家”的上门服务。 慈铭体检在国内首创独立酒店式体检场所、完全医检分离、全程个性服务、计算机程序管理的现代化专业体检模式，体检中心内部环境优雅、温馨舒适，拥有包括德国西门子DR影像系统、美国通用GE彩超、德国罗氏全自动电化学发光检测仪、日本奥林巴斯全自动生化仪、欧姆龙动脉硬化检测仪、丹麦电测听检测仪、全自动酶标仪、碳十三质谱分析仪等一流大型医疗诊断设备，为全面、快速、科学、准确地开展健康体检奠定了坚实的基础。 慈铭致力于为社会精英乃至社会大众提供高端专业的全方位健康管理服务，拥有一支以来自国内各大三甲医院的中高级技术人员为主力的健康体检专业队伍，秉承全心全意为人民健康服务的宗旨，努力实践“利己、利家、利国、利民”的企业理念，为深圳市民提供专业优质的健康体检服务。</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+</div>
+
+    <div class="ykfooter">
+        <a href="#">帮助中心</a><span class="vertical">|</span>
+        <a href="#">关于我们</a><span class="vertical">|</span>
+        <a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span>
+    </div>
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.core.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/leftside.js" type="text/javascript"></script>
+
+<script>
+    var setting = {
+        view: {
+            selectMulti: true,
+            dblClickExpand: false,
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+            onClick: showInfo
+        }
+    },
+
+    city = [
+        {id:1, pId:0, name: "城市", open:true},
+        {id:2, pId:1, name: "广州市", open:true},
+        {id:3, pId:2, name: "天河分院"},
+        {id:4, pId:2, name: "荔湾分院"},
+        {id:5, pId:1, name: "深圳市", open:true},
+        {id:50, pId:5, name: "南山分院", esid:'nanshan'},
+        {id:51, pId:5, name: "福田分院", esid:'futian'}
+
+    ], ztreeObj;
+
+    $(document).ready(function() {
+
+        ztreeObj = $.fn.zTree.init($("#entity"), setting, city);
+        ztreeObj.expandAll(true);
+
+        $(".leftul span").on("click", function() {
+            $(this).addClass("active").siblings().removeClass("active");
+            $("#" + $(this).attr("data-source")).show().siblings(".ztree").hide();
+        })
+        //右侧边栏预约主体切换
+        $('.cek').click(function() {
+            $(this).parent().parent().addClass('trActive');
+            var format = $(this).parent().siblings(".cng").html();
+            $(".blFormat").html(format);
+            $('.checkdetail').css('display', 'block');
+
+        });
+
+        //右侧边栏底部操作
+        $('.undo').click(function() {
+            $('.checkdetail').css('display', 'none');
+        });
+
+        //数据超过一页显示分页
+        if($('tbody tr').size() > 8) {
+            $(".tcdPageCode").css('display', 'block');
+        } else {
+            $(".tcdPageCode").css('display', 'none');
+        }
+
+
+    });
+
+    function showInfo(event, treeId, treeNode, esid) {
+        var id = treeNode.esid;
+        $('#'+id).find('.hds').text(treeNode.name);
+        $('#'+id).show().siblings().hide();
+    };
+</script>
+</body>
+
+</html>

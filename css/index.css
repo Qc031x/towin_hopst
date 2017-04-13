@@ -1,0 +1,32 @@
+.contentBox{padding: 20px 0 0 30px; overflow: hidden; height: 669px; border-bottom: 1px solid #E3E3E3;}
+.menulink{overflow: hidden; width: 850px;}
+.menulink a{width:216px; height:96px; padding:30px 0 0 20px; display:inline-block; color:#fff; font-size:12px; margin:0 70px 60px 0; overflow:hidden; -webkit-transition-property: opacity; -webkit-transition-duration: 0.3s; -webkit-transition-timing-function: ease; float:left; text-align:left; position:relative;}
+.menulink a:hover{opacity:0.8;}
+.menulink a span{font-size:32px; width: 112px; height:45px; line-height:45px; text-align:left; display:block; overflow: hidden;}
+.menulink a em{float:right; display:inline-block;font-style:normal;font-size:16px; height:45px; line-height:50px; color: #fff;}
+.menulink a p{font-style:normal; font-size:14px; width: 112px; height:36px; line-height:36px;}
+
+.menulink a .t_num{display:inline-block; line-height:45px; overflow:hidden; position:relative;}
+.menulink a .t_num u{width:18px; position:relative; line-height:45px; font-size:32px; display:table; float: left; text-decoration:none; text-align:center;}
+.menulink a.link1{background: url("../images/index1.png") no-repeat left top; background-size:236px auto;}
+.menulink a.link2{background: url("../images/index2.png") no-repeat left top; background-size:236px auto;}
+.menulink a.link3{margin-right: 0; background: url("../images/index3.png") no-repeat left top; background-size:236px auto;}
+.menulink a.link4{background: url("../images/index4.png") no-repeat left top; background-size:236px auto;}
+.menulink a.link5{background: url("../images/index5.png") no-repeat left top; background-size:236px auto;}
+.menulink a.link6{margin-right: 0; background: url("../images/index6.png") no-repeat left top; background-size:236px auto;}
+
+.menulink .link3 .t_num u.active{width:15px; font-size:24px;}
+
+.menulink a.link7{padding: 0 10px 0 20px; width: 200px; height: 60px; border-radius: 8px; background:#25befe url("../images/index7.png") no-repeat 208px center; background-size:12px auto;}
+.menulink a.link7 p{line-height: 60px; height: 60px; margin: 0; font-size: 18px;}
+.menulink a.nomargin{margin-right: 0;}
+
+.menulink .refresh{background: #509cfc url("../images/refresh.png") no-repeat 8px center; cursor: pointer; background-size:16px auto; border-radius: 5px; height: 30px; line-height: 30px; width: 42px; padding: 0 0 0 28px; float: right; font-size: 16px; color: #fff;}
+
+.menulink .link1 span{z-index: 9992}
+.menulink .link1 span{z-index: 9992}
+.menulink .link1 span{z-index: 9992}
+.menulink .link1 span{z-index: 9991}
+.menulink .link1 span{z-index: 9991}
+.menulink .link1 span{z-index: 9991}
+* {z-index: 9991}

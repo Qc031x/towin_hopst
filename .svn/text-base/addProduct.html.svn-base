@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>新增套餐</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/product.css" rel="stylesheet" type="text/css"/>
+    <!--
+    <link rel="stylesheet" href="ueditor/themes/default/css/ueditor.css" type="text/css"/>
+    -->
+    <style type="text/css">
+        tr>td.tableleft {
+            line-height: 30px;
+        }
+        input[type='text'] { width: 450px;}
+
+        .modal {
+            margin: 50px 0 0 -500px;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="left"><a href="index.html"><img src="images/logo.png" alt="logo"/>天问企业预约平台-医生端</a>
+    <span class="wel">欢迎<span>xxx</span>天问企业预约平台-医生端</span></div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png"/><span class="username">退出登录</span></div>
+</div>
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="left.html?xztc" height="669" width="270"></iframe>
+    </div>
+
+    <div class="page-content">
+        <div class="hds">新增套餐</div>
+                <br/>
+                <div class="portlet-body">
+                    <form method="post" class="definewidth m20">
+                        <input type="hidden" name="id" value="">
+                        <table class="table table-bordered table-hover m10" style="width:90%;">
+                            <tbody>
+                                <tr>
+                                    <td width="15%" class="tableleft"><span style="color:red">*</span>套餐名称</td>
+                                    <td>
+                                        <input type="text" name="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableleft">套餐编号</td>
+                                    <td>
+                                        <input type="text" name="pNo" readonly style="text-align: center;" placeholder="系统自动生成">
+                                    </td>
+                                </tr>
+                                <!--
+                                <tr>
+                                    <td class="tableleft">套餐类型</td>
+                                    <td>
+                                        <select name="productType">
+                                            <option value="1">通用体检套餐</option>
+                                            <option value="2">企业体检套餐</option>
+                                            <option value="3">家属体检套餐</option>
+                                        </select>
+                                    </td>
+                                </tr>-->
+                                <tr>
+                                    <td class="tableleft"><span style="color:red">*</span>套餐价格</td>
+                                    <td>
+                                        原价：<input type="text" ctrl="number" id="market-price" name="marketPrice" style="width:110px;">&nbsp;&nbsp;
+                                        优惠价：<input type="text" ctrl="number" id="shop-price" name="shopPrice" style="width:110px;">&nbsp;&nbsp;
+                                        折扣：<input type="text" ctrl="number" id="discount" name="discount" readonly="true" style="width:50px;">&nbsp;%
+                                        家属购买价：<input type="text" id="relation-price" name="relationPrice" style="width:110px;">&nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="tableleft"><span style="color:red">*</span>适用性别</td>
+                                    <td>
+                                        <span style="line-height: 20px;">男女通用&nbsp;<input type="radio" name="sex"></span> &nbsp;&nbsp;
+                                        <span style="line-height: 20px;">男性&nbsp;<input type="radio" name="sex"></span>&nbsp;&nbsp;
+                                        <span style="line-height: 20px;">女性&nbsp;<input type="radio" name="sex"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableleft"><span style="color:red">*</span>套餐配图</td>
+                                    <td>
+                                        <div>
+                                            <span class="sfz"><a href="javascript: openFile();"><img id="previewImg0" src="images/addtaocanimg.jpg"></a></span>
+                                        </div>
+                                        <input class="scwjanys preview" type="file" id="fileName" name="file" url-data="0" style="visibility: hidden;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableleft"><span style="color:red">*</span>选择项目</td>
+                                    <td>
+                                        <input type="button" class="btn btn-info" value="单击以展开" data-toggle="modal" data-target="#selectItem">&nbsp;&nbsp;
+                                        <input type="button" class="btn btn-default" value="查看已选单项" data-toggle="modal" data-target="#watchItem">
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="tableleft"><span style="color:red">*</span>选择门店</td>
+                                    <td>
+                                        <input type="button" class="btn btn-info" value="单击以展开" data-toggle="modal" data-target="#selectShop">&nbsp;&nbsp;
+                                        <input type="button" class="btn btn-default" value="查看已选单项" data-toggle="modal" data-target="#watchShop">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tableleft">套餐简述</td>
+                                    <td>
+                                        <textarea name="productBrief" rows="10" cols="150" style="width:99%;"></textarea>
+                                    </td>
+                                </tr>
+                                <!--
+                                 <tr>
+                                    <td class="tableleft">补充内容</td>
+                                    <td>
+                                        <script id="description" name="description"  type="text/plain" style="width:100%; height: 300px;"></script>
+                                    </td>
+                                </tr>
+                                -->
+                                <tr>
+                                    <td colspan="2" class="tableleft">
+                                        <button type="submit" class="btn btn-success">保存</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+    </div>
+
+    <div class="ykfooter"><a href="#">帮助中心</a><span class="vertical">|</span><a href="#">关于我们</a><span class="vertical">|</span><a      href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;     2016&nbsp;浙&nbsp;B2-20080224-16</span>
+    </div>
+
+
+    <div id="selectItem" class="modal fade " style="width: 1050px;height:auto;display: none;">
+        <div class="modal-header">
+            <a href="#" class="close" data-dismiss="modal" aria-hidden="true">X</a>
+            <h3>选择体检单项</h3>
+        </div>
+        <div class="modal-body" style="max-height: 800px;">
+            <div class="content">
+                <div class="tcaddcontent">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr class="toplist" id="mealInfoTable">
+                                    <td><input type="checkbox" id="select1" class="checkAllmealInfoId" /></td>
+
+                                    <td width="10%">编号</td>
+
+                                    <td width="10%">项目类型</td>
+
+                                    <td width="10%">项目名称</td>
+
+                                    <td>体检项</td>
+                                    <td>男</td>
+                                    <td>女</td>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="mealInfoCheckbox" type="checkbox" /></td>
+                                    <td>101955</td>
+                                    <td>科室检查</td>
+                                    <td>一般情况</td>
+                                    <td>
+                                        测量身高、体重、血压、体重指数，用于诊断高血压、低血压、体重超重、肥胖、消瘦、矮小症等，为相关科室的检查提供重要的依据。
+                                    </td>
+                                    <td><span class="ishas"></span></td>
+                                    <td><span class="ishas"></span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="tcdPageCode paginList">
+                            <div id="pagination" class="pagination"></div>
+                        </div>
+                        <div class="pageBlank"></div>
+                    </div>
+                    <div class="tcaddscdiv">
+                        <a class="newaddan1" onclick="addMealInfo()" href="javascript:void(0);"></a>
+                        <a class="newaddan2" href="javascript:void(0);" onclick="removeMealInfo();"></a>
+                    </div>
+                    <div class="tcxzlist" id="checkMealInfo">
+                        <p><label title="全选"><input id="select2" class="checkMealId" type="checkbox">全选</label></p>
+                        <p><label title="一般情况"><input name="checkMealCheckbox" value="101955" type="checkbox">101955:一般情况</label></p>
+                        <p><label title="内科"><input name="checkMealCheckbox" value="101956" type="checkbox">101956:内科</label></p>
+                        <p><label title="外科（男）"><input name="checkMealCheckbox" value="101957" type="checkbox">101957:外科（男）</label></p>
+                        <p><label title="外科（女）"><input name="checkMealCheckbox" value="101958" type="checkbox">101958:外科（女）</label></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-success"  data-dismiss="modal">选好了</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--查看已选单项-->
+    <div id="watchItem" class="modal col-xs-6 fade " style="width: 850px;display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">X</a>
+            <h3>已选择的体检单项</h3>
+        </div>
+        <div class="modal-body">
+            <div class="content">
+                <div id="productProject">
+                <div class="tcxmtitle">套餐项目</div>
+                <div class="tcxmdiv">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                        <tbody>
+                            <tr class="toplist" id="mealInfo">
+                                <td width="25">序号</td>
+                                <td width="70">体检项目</td>
+                                <td width="100">临床意义</td>
+                                <td width="25" style="text-align: center;">男</td>
+                                <td width="25" style="text-align: center;">女</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">科室检查</div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="textleft">一般情况</td>
+                                <td class="textleft">身高、体重、血压、体重指数</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="textleft">内科</td>
+                                <td class="textleft">病史、家族史、心率、心律、心音、肺部听诊、肝脾触诊、肾脏叩诊、神经反射、腱反射</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="textleft">外科</td>
+                                <td class="textleft">皮肤、浅表淋巴结、甲状腺、脊柱、乳房、四肢关节、外生殖器、肛门直肠指诊等</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="textleft">眼科常规检查</td>
+                                <td class="textleft">裸视力、矫正视力、色觉、外眼、眼科其它、角膜、晶状体、眼底</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="textleft">耳鼻喉科</td>
+                                <td class="textleft">既往史、听力、外耳、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体等</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td class="textleft">口腔检查</td>
+                                <td class="textleft">唇、齿、齿龈、舌、腭、腮腺、颌下腺、颞下颌关节</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td class="textleft">中医会诊</td>
+                                <td class="textleft">望、闻、问、切</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">实验室检查</div></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td class="textleft">血常规</td>
+                                <td class="textleft">通过检查发现血液方面的问题，评价骨髓功能，有助于临床急慢性感染、病毒性疾病的诊断，出血性疾病的诊断，了解有无贫血及贫血分类</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td class="textleft">尿常规</td>
+                                <td class="textleft">对泌尿系统疾病的诊断、疗效的观察有重要意义，如急慢性肾炎、膀胱炎、肾病综合征等，并可观察一些全身性疾病的异常表现，尿糖检查是糖尿病筛查和病情判断的指标</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td class="textleft">肝功能4项</td>
+                                <td class="textleft">谷丙转氨酶、谷草转氨酶、谷氨酰转肽酶、碱性磷酸酶，最常用于筛检肝脏机能障碍、肝硬化及酒精性肝损害等病变的方法。</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td class="textleft">肾功3项</td>
+                                <td class="textleft">尿素氮（BUN）、肌酐（Cr）、尿酸（UA）,用于肾功能评价，测定肾功能损害程度及预后估计，血尿酸增高对高尿酸血症、痛风有诊断意义.</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td class="textleft">血脂4项</td>
+                                <td class="textleft">总胆固醇、甘油三酯、高密度脂蛋白胆固醇、低密度脂蛋白胆固醇、是测定体内脂质代谢异常和高脂血症的重要指标。</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td class="textleft">空腹血糖</td>
+                                <td class="textleft">评价人体空腹状态下糖代谢是否正常，及糖尿病患者空腹血糖控制是否达标，是诊断糖尿病最常用和最重要的指标</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td class="textleft">甲胎蛋白(AFP)</td>
+                                <td class="textleft">可提示原发性肝癌、生殖腺胚胎性肿瘤、肝硬化</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td class="textleft">癌胚抗原(CEA)</td>
+                                <td class="textleft">广谱性肿瘤标志物，对大肠癌、胰腺癌的筛查、疗效观察和预后评估有重要临床意义，在胃癌、乳腺癌、肺癌也可升高</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td class="textleft">癌抗原125</td>
+                                <td class="textleft">存在于卵巢肿瘤的上皮细胞内，对诊断卵巢癌有较大临床意义</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td class="textleft">癌抗原153</td>
+                                <td class="textleft">CA153是乳腺癌的最重要的特异性标志物，用于筛查、疗效监测、预后判断有重要意义</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td class="textleft">癌抗原（CA19-9）</td>
+                                <td class="textleft">对胰腺癌、胆道肿瘤，胃肠癌等的筛查及疗效监测，急性胰腺炎、胆管炎、胆石症、急性肝炎、肝硬化等可升高</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td class="textleft">便常规</td>
+                                <td class="textleft">性状、颜色、红细胞、白细胞、虫卵</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td class="textleft">血流变</td>
+                                <td class="textleft">血流变检测主要反映血液流动性、凝滞性和血液粘度的变化。适用于高血压、动脉硬化、脑中风、糖尿病及高脂血症等疾患的检查。
+                                </td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td class="textleft">同型半胱氨酸</td>
+                                <td class="textleft">同型半胱氨酸是蛋氨酸和半胱氨酸代谢过程中的一个重要中间产物，高同型半胱氨酸血症是动脉粥样硬化和冠心病的一个独立危险因素。
+                                </td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td class="textleft">总胆汁酸（TBA）</td>
+                                <td class="textleft">胆汁酸是由胆固醇形成的，胆汁酸的测定能反映肝脏的功能状况。</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td class="textleft">女性性激素4项</td>
+                                <td class="textleft">孕酮（P）、雌二醇（E2）、促卵泡生成素（FSH）、促黄体生成素（LH）</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">医技检查</div></td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td class="textleft">心电图</td>
+                                <td class="textleft">通过在体表特定部位同步记录和分析心脏每一个心动周期所产出电活动变化的曲线图形，为心脏疾病如心律失常、心肌缺血、心肌梗塞、心房、心室增大等疾病的诊断、评估疗效和预后评估的重要依据</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td class="textleft">腹部彩超</td>
+                                <td class="textleft">对人体腹部内脏器官的状况和各种病变（如肿瘤、结石、积水、脂肪肝等）提供高清晰度的彩色动态超声断层图像，是上述重要脏器疾病诊断的重要依据</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td class="textleft">心脏彩超</td>
+                                <td class="textleft">心脏彩超是唯一能动态显示心腔内结构、心脏的搏动和血液流动的仪器，也是唯一能直观显示瓣膜病变的仪器，对人体没有任何损伤，可了解瓣膜病变的程度、心肌的增厚、心腔的扩大、冠心病、心肌的运动状况及心功能、心肌缺血的部位等都能用彩超确诊</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td class="textleft">颈动脉彩超</td>
+                                <td class="textleft">了解颈部血管病变、狭窄程度、颈动脉硬化和颈动脉血流情况，是诊断、评估颈动脉病变的有效手段，在动脉粥样硬化的预防和疗效评估中意义重大</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td class="textleft">经颅多普勒</td>
+                                <td class="textleft">显示颅内动脉血流速度、频谱波型、脉动指数，判定脑血流、供血、脑动脉硬化、脑血管痉挛及狭窄等情况</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td class="textleft">动脉硬化检测</td>
+                                <td class="textleft">检测内容包括脉搏波速度(PWV)及踝臂指数(ABI,下肢血压与上肢血压的比值)。动脉壁僵硬度增加是动脉硬化早期危险信号。可早期发现动脉粥样硬化的病变。</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td class="textleft">骨密度</td>
+                                <td class="textleft">通过检查跟骨或手部骨量测定，可早期发现骨量减少及估计骨质疏松的程度</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td class="textleft">肺功能检测</td>
+                                <td class="textleft">检测肺通气功能、换气功能、呼吸调节功能及肺循环功能，对于早期检出肺、气道病变，评估疾病的病情严重程度及预后有重要指导意义</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td class="textleft">胸部正位DR</td>
+                                <td class="textleft">对支气管、两肺、心脏、胸廓、胸膜、纵隔及膈等部位病变的临床诊断提供影像学上的依据。</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td class="textleft">颈椎侧、双斜位DR</td>
+                                <td class="textleft">了解椎体有无增生、脊柱侧弯、血管有无压迫、椎间是否狭窄，有无骨质疏松、骨质破坏、及退行性病变等异常</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td class="textleft">女性盆腔彩超</td>
+                                <td class="textleft">观察子宫、附件的大小、形态结构、了解有无炎症、肿块、囊肿等，了解病变性质</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td class="textleft">乳腺彩超</td>
+                                <td class="textleft">显示乳房内各层软组织及其肿块的形态，发现乳腺增生、肿瘤、结节、腺瘤、乳腺癌等病变</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">妇科检查</div></td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td class="textleft">妇科检查</td>
+                                <td class="textleft">外阴、阴道、宫颈、附件、妇科其它，了解女性生殖系统有无异常，发现可能存在的各种炎症、肿瘤等病变</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td class="textleft">宫颈TCT</td>
+                                <td class="textleft">是宫颈癌及其癌前病变最先进的筛查方法，以及对滴虫、霉菌性阴道炎及人乳头瘤</td>
+                                <td><span><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">其他项目</div></td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td class="textleft">营养早餐</td>
+                                <td class="textleft">鸡蛋、牛奶等营养丰富的早餐</td>
+                                <td><span class="ishas"><span></span></span></td>
+                                <td><span class="ishas"><span></span></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>    
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-danger" data-dismiss="modal">关闭</a>
+        </div>
+    </div>
+
+    <!--选择门店-->
+    <div id="selectShop" class="modal fade " style="width: 1050px;height:auto;display: none;">
+        <div class="modal-header">
+            <a href="#" class="close" data-dismiss="modal" aria-hidden="true">X</a>
+            <h3>请在下方选择门店</h3>
+        </div>
+        <div class="modal-body" style="max-height: 800px;">
+            <div class="content">
+                <div class="tctoptjsx">
+            <span class="rigsxtj"><em style="font-size:14px;color:#000">切换城市：</em>
+                <select id="cityList" class="rigsxxlys">
+                    <option value="">深圳</option>
+                    <option value="">广州</option>
+                    <option value="">佛山</option>
+                </select>
+            </span> <span class="guanbitanchosetc"></span>
+                </div>
+                <div class="tcaddorremdiv">
+                    <div class="tcaddcontent">
+                        <div class="leftxmlist branch">
+                            <div class="b_frame">
+                                <table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
+                                    <tr class="toplist">
+                                        <th class="list1">
+                                            <input class='checkAllEsid' id="select3" type=checkbox />
+                                        </th>
+                                        <th class="list3">门店名称</th>
+                                        <th class="list4">地址</th>
+                                    </tr>
+                                    <tr id="md深圳福田分院">
+                                        <td><input type="checkbox" name="branchCheckbox"></td>
+                                        <td>
+                                            深圳市福田分院<input type="hidden" value="89"><input type="hidden" value="深圳">
+                                        </td>
+                                        <td>广东省深圳市福田区胜和路胜和广场B座二楼</td>
+                                    </tr>
+                                    <tr id="md深圳南山分院">
+                                        <td><input type="checkbox" name="branchCheckbox"></td>
+                                        <td>
+                                            深圳南山分院<input type="hidden" value="89"><input type="hidden" value="深圳">
+                                        </td>
+                                        <td>广东省深圳市福田区胜和路胜和广场B座二楼</td>
+                                    </tr>
+                                    <tr id="md深圳罗湖分院">
+                                        <td><input type="checkbox" name="branchCheckbox"></td>
+                                        <td>
+                                            深圳市罗湖分院<input type="hidden" value="89"><input type="hidden" value="深圳">
+                                        </td>
+                                        <td>广东省深圳市福田区胜和路胜和广场B座二楼</td>
+                                    </tr>
+                                </table>
+                                <div class="quotes">
+                                    <div id="pager"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fenye" id=fydiv2>
+                            <div class="" id=abc3></div>
+                        </div>
+                    </div>
+                    <div class="tcaddscdiv">
+                        <a class="newaddan1" onclick="addBranch()" href="javascript:void(0);"></a>
+                        <a class="newaddan2" href="javascript:void(0);"
+                           onclick="removeBranch()"></a>
+                    </div>
+                    <div class="tcxzlist" id="checkBranch">
+                        <p>
+                            <label title="全选">
+                                <input type="checkbox" id="select4" class="checkEsid" />全选
+                            </label>
+                        </p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-success" id="addShop">添加</a>
+            <a href="#" class="btn btn-danger"  data-dismiss="modal" id="closeShop">添加</a>
+        </div>
+    </div>
+
+    <!--查看门店-->
+    <div id="watchShop" class="modal col-xs-6 fade " style="width: 850px;display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal" val="watchShop">X</a>
+            <h3>已选择的门店</h3>
+        </div>
+        <div class="modal-body">
+            <div class="content">
+                <div class="tcxmtitle">适用门店</div>
+                <div class="tcxmdiv">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr class="toplist" id="branchInfo">
+                                <td width="270">门店名称</td>
+                                <td>地址</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">深圳</div></td>
+                            </tr>
+                            <tr>
+                                <td>福田中心区分院</td>
+                                <td>广东省深圳市福田区福华三路88号财富大厦19层（福中三路与金田路交汇处东北角）</td>
+                            </tr>
+                            <tr>
+                                <td>南山科技园中区分院</td>
+                                <td>广东省深圳市南山区科苑路6号深圳科技工业园大厦金融中心2栋12楼</td>
+                            </tr>
+                            <tr>
+                                <td>福田莲花北分院</td>
+                                <td>广东省深圳市福田区莲花北雨田路28号莲丰大厦1-3层</td>
+                            </tr>
+                            <tr>
+                                <td>南山科技园南区分院</td>
+                                <td>广东省深圳市南山区科技园高新南一道富诚科技大厦2楼</td>
+                            </tr>
+                            <tr>
+                                <td>南山蛇口分院</td>
+                                <td>广东省深圳市南山区南海大道与东滨路交汇处美年广场5栋7楼</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><div class="xiangmuleibie">东莞</div></td>
+                            </tr>
+                            <tr>
+                                <td>东莞分院</td>
+                                <td>广东省东莞市南城元美路黄金花园金裕楼1-2楼</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+         <div class="modal-footer">
+            <a href="#" class="btn btn-danger" data-dismiss="modal">关闭</a>
+        </div>
+    </div>
+
+</div>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/pagination.js"></script>
+<script src="js/leftside.js"></script>
+<!--
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+-->
+<script>
+    $(document).ready(function () {
+        $(".tcdPageCode ").show();
+
+        $(".checkAllmealInfoId").click(function() {
+            $('input[name="mealInfoCheckbox"]').attr("checked", this.checked);
+        });
+
+        $(".checkMealId").click(function() {
+            $('input[name="checkMealCheckbox"]').attr("checked", this.checked);
+        });
+
+        $('.close').on('click',function(){
+            $('#' + $(this).attr('val')).modal('hide');
+        })
+
+        $("input[ctrl='number']").on({
+
+            'keypress':function(){
+                isNum(e);
+            },
+
+            'keyup':function(){
+                verifyNum($(this).val(),$(this).prop('id'));
+            }
+        })
+        /*
+        var ue = UE.getEditor('description', {
+            toolbars: [
+                [
+                    'fullscreen', 'source', '|', 'undo', 'redo', '|',
+                    'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+                    'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+                    'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+                    'directionalityltr', 'directionalityrtl', 'indent', '|',
+                    'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+                    'link', 'unlink', 'anchor', '|', 'imagenone','insertimage', 'imageleft', 'imageright', 'imagecenter', '|',
+                    'simpleupload', 'emotion', 'scrawl','map', 'insertframe', 'insertcode', 'pagebreak', 'template', '|',
+                    'horizontal', 'date', 'time', 'spechars', 'wordimage', '|',
+                    'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
+                    'print', 'preview', 'searchreplace', 'help'
+                ]
+            ],
+            autoHeightEnabled: true,
+            autoFloatEnabled: true,
+            elementPathEnabled:false,
+            wordCount:false,     
+            // maximumWords:10000,
+            enableAutoSave: false
+        }); */
+    });
+
+    function addMealInfo() {
+
+        if($("input[name='mealInfoCheckbox']:checked").length == 0) {
+        }
+
+        $('input:checkbox[name=mealInfoCheckbox]:checked').each(function(i) {
+            var id = $(this).parent().siblings("td:eq(0)").text();
+            var name = $(this).parent().siblings("td:eq(2)").text();
+
+            $("#checkMealInfo").append("<p><label title='" + name + "'><input type='checkbox' name='checkMealCheckbox' value='" + id + "'/>" + id + ":" + name + "</label></p>");
+        });
+
+        //ajaxMealInfo();
+    }
+
+    function removeMealInfo() {
+        $('input:checkbox[name=checkMealCheckbox]:checked').each(function(i) {
+            var id = $(this).val();
+            $(this).parents("p").remove();
+        });
+
+        //ajaxMealInfo();
+    }
+
+
+    function addBranch(){
+
+        if($("input[name='branchCheckbox']:checked").length==0){
+            $.sgfmdialog({isModel:false,"info":"请选择一个分院！","showTime":2000,level:1});
+            return false;
+        }
+        $('input:checkbox[name=branchCheckbox]:checked').each(function(i){
+
+            var esid = $($(this).parent().siblings("td:eq(0)").find("input")[0]).val();
+            //var name = $(this).parent().siblings("td:eq(1)").text();
+            var name = $(this).parent().siblings("td:eq(0)").text();
+            var address = $(this).parent().siblings("td:eq(1)").text();
+            var cityname = $($(this).parent().siblings("td:eq(0)").find("input")[1]).val();
+
+            $("#checkBranch").append("<p><label title='"+name+"'><input type='checkbox' name='checkBranckCheckbox' address='"+address+"' alt='"+cityname+"' value='"+esid+"'/>"+name+"</label></p>");
+        });
+
+        //getBranchByCsidAndCity($("#cityList").val());
+    }
+
+    function removeBranch(){
+        $('input:checkbox[name=checkBranckCheckbox]:checked').each(function(i){
+            var esid = $(this).val();
+            $(this).parents("p").remove();
+        });
+        //getBranchByCsidAndCity($("#cityList").val());
+    }
+
+
+    function getBranchByCsidAndCity(city){
+        if(city==null || city==undefined){
+            return false;
+        }
+        var esids = "";
+        $("#checkBranch p:gt(0)").each(function(){
+            esids = esids + $(this).find("input").val() + ",";
+        })
+        if(esids!=""){
+            esids=esids.substring(0,esids.length-1);
+        }
+        /*
+         var url = "${ctx}/core/product.findBranchByCsidAndCity.do",
+         data = {"tentityshop.csid" : ${sjLoginUserInfo.csid}, "tentityshop.city" : city,"esid":esids};
+
+         $("div.b_frame > table").sgfmtable({async:false,url:url,params:data,"ajaxtype":"post",
+         "callback":function(event,td){
+         }
+         });
+         */
+        $("#select3").attr("checked",false);
+        $("#select4").attr("checked",false);
+    }
+    function isNum(e) {
+        var k = window.event ? e.keyCode : e.which;
+        if (((k >= 48) && (k <= 57)) || k == 8 || k == 0 || k == 46) {
+        } else {
+            if (window.event) {
+                window.event.returnValue = false;
+            }
+            else {
+                e.preventDefault(); //for firefox
+            }
+        }
+    }
+
+    function verifyNum(num,id){
+        if(!isNaN(num)){
+            if(Number(num)==0){
+                $("#"+id).val("");
+            }
+        }else{
+            $("#"+id).val("");
+        }
+    }
+
+    function openFile() {
+        $("#fileName ").click();
+    }
+</script>
+</body>
+</html>
+

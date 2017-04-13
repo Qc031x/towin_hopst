@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>套餐推送</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/productList.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .push {
+            color: #00AFC7; cursor: pointer;
+        }
+        .modal {
+            margin: 50px 0 0 -500px;
+        }
+        hr {
+            margin:10px 0;
+        }
+    </style>
+</head>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-医生端
+        <span class="wel">欢迎<span>xx</span>登录天问企业预约平台-医生端！</span>
+    </div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="left.html?tcts" height="669" width="270"></iframe>
+    </div>
+
+    <div class="page-content">
+        <div class="hds" style="width:100%;">合作企业列表</div>
+        <br>
+        <div class="search-body">
+            <form>
+                <div class="search-box">
+                    <span>企业名称：</span>
+                    <input type="text" />
+                </div>
+                <div class="search-btn">
+                    <button class='btn btn-info'>筛选</button>
+                </div>
+            </form>
+        </div>
+        <!--搜索部分end-->
+
+
+        <div class="portlet-body">
+            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                <thead>
+                <tr>
+
+                    <th>企业名称</th>
+
+                    <th>企业性质</th>
+
+                    <th>企业规模</th>
+
+                    <th>签约时间</th>
+
+                    <th>企业地址</th>
+
+                    <th class="operate">操作</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>深圳地铁集团有限公司</td>
+                    <td>国有企业</td>
+                    <td class="cng1">超过1000人</td>
+                    <td>2016-01-12</td>
+                    <td>深圳市福田区福中一路1016号地铁大厦27-31</td>
+                    <td>
+                        <a class="push" data-toggle="modal" href="#productModal">推送</a>|
+                        <a class="push" data-toggle="modal" href="#pushInfoModal">查看</a>
+                    </td>
+                </tbody>
+
+            </table>
+            <div class="tcdPageCode paginList">
+                <div id="pagination-1" class="pagination"></div>
+            </div>
+            <div class="pageBlank"></div>
+        </div>
+    </div>
+</div>
+
+    <div class="ykfooter">
+        <a href="#">帮助中心</a><span class="vertical">|</span>
+        <a href="#">关于我们</a><span class="vertical">|</span>
+        <a href="#">联系方式</a><span class="vertical">|</span>
+        <span class="ykcompely">天问信息技术（深圳）有限公司</span>
+        <span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span>
+    </div>
+
+<!--企业套餐弹窗-->
+<div id="productModal" class="modal fade "  style="width: 1050px;height:auto;display: none;">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">X</a>
+        <h3>体检套餐菜单</h3>
+    </div>
+    <div class="modal-body" style="max-height: 800px;">
+        <div class="search-body">
+            <div class="search-box" style="width:600px;float:left;">
+                <span>套餐名称</span>
+                <input type="text" style="width:200px;"/>
+                <span class="btn btn-info">搜索</span>
+            </div>
+        </div>
+        <hr>
+        <div class="content">
+            <form id="" >
+                <div class="tcaddcontent">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                        <tr class="toplist" id="packageInfoThead">
+                            <td><input type="checkbox" id="select1" class="checkAllmealInfoId" /></td>
+                            <td width="10%">编号</td>
+                            <td width="30%">套餐名称</td>
+                            <td width="30%">创建时间</td>
+                            <td width="30%">查看详情</td>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐A(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐B(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐C(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐D(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐E(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐F(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐G(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                                <td><a href="#" target="_blank">套餐H(点击查看)</a></td>
+                        </tr>
+                        <tr>
+                            <td><input name="mealInfoCheckbox" type="checkbox" price="10.00"/></td>
+                            <td>101955</td>
+                            <td>套餐A</td>
+                            <td>2016-12-10 15:00:01</td>
+                            <td><a href="#" target="_blank">套餐J(点击查看)</a></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="tcdPageCode paginList">
+                        <div id="pagination-2" class="pagination"></div>
+                    </div>
+                    <div class="pageBlank"></div>
+                </div>
+                <div class="tcaddscdiv">
+                    <a class="newaddan1" onclick="addMealInfo('checkPackageInfo')" href="javascript:void(0);"></a>
+                    <a class="newaddan2" href="javascript:void(0);" onclick="removeMealInfo();"></a>
+                </div>
+                <div class="tcxzlist" id="checkPackageInfo">
+                    <p><label title="全选"><input id="select2" class="checkMealId" type="checkbox">全选</label></p>
+                    <p>
+                        <label title="一般情况">
+                            <input name="checkMealCheckbox" value="101955" type="checkbox">套餐A
+                        </label>
+                    </p>
+                    <p>
+                        <label title="内科">
+                            <input name="checkMealCheckbox" value="101956" type="checkbox">套餐B
+                        </label>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-success">推送</a>
+        <a href="#" class="btn" data-dismiss="modal">关闭</a>
+    </div>
+</div>
+
+<div id="pushInfoModal" class="modal col-xs-6 fade " style="width: 850px;display: none;">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">X</a>
+        <h3>已推送的套餐</h3>
+    </div>
+    <div class="modal-body">
+        <div class="content">
+            <div id="productProject">
+                <div class="tcxmtitle">已推送的套餐列表</div>
+                <div class="tcxmdiv">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                        <tbody>
+                        <tr class="toplist" id="mealInfo">
+                            <td width="25">序号</td>
+                            <td width="70">套餐名称</td>
+                            <td width="25" style="text-align: center;">男</td>
+                            <td width="25" style="text-align: center;">女</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐A</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐B</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐C</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐D</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐E</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐F</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐G</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="textleft"><a href="#" target="_blank">套餐A</a></td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td class="textleft">血脂4项</td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td class="textleft">空腹血糖</td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td class="textleft">甲胎蛋白(AFP)</td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td class="textleft">癌胚抗原(CEA)</td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td class="textleft">癌抗原125</td>
+                            <td><span><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td class="textleft">癌抗原153</td>
+                            <td><span><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td class="textleft">癌抗原（CA19-9）</td>
+                            <td><span class="ishas"><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td class="textleft">女性性激素4项</td>
+                            <td><span><span></span></span></td>
+                            <td><span class="ishas"><span></span></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a>
+    </div>
+</div>
+    <script src="js/jquery-1.11.1.min.js " type="text/javascript "></script>
+    <script src="js/bootstrap.min.js " type="text/javascript "></script>
+    <script src="js/pagination.js "></script>
+    <script src="js/leftside.js "></script>
+    <script>
+        $(document).ready(function() {
+            $(".tcdPageCode ").show();
+
+            //多个弹窗多个分页....
+            initUI(1, 10, 3, 'pagination-1');
+            initUI(1, 10, 3, 'pagination-2');
+            
+        });
+
+        function initUI(pageNo, pageTotal, pageSize, objId) {
+            pagination({
+                cur: pageNo,
+                total: pageTotal,
+                len: 5,
+                targetId: objId,
+                callback: function () {
+                    var oPages = document.getElementsByClassName('page-index');
+                    for (var i = 0; i < oPages.length; i++) {
+                        oPages[i].onclick = function () {
+                            initUI(this.getAttribute('data-index'), pageTotal, 3, objId);
+                        }
+                    }
+                    $('.firstPage').click(function () {
+                        initUI(1, pageTotal, 3, objId);
+                    });
+                    $('.lastPage').click(function () {
+                        initUI(total, pageTotal, 3, objId);
+                    });
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

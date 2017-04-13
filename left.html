@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>首页</title>
+    <!--样式文件引用-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet"><!--公共导航部分--->
+    <link href="css/index.css" rel="stylesheet" type="text/css"><!---my css--->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="page-sidebar nav-collapse collapse">
+      <ul class="page-sidebar-menu">
+          <li>
+              <a class="sideblk blk" id="index" href="javascript:void(0);" onclick="go('index.html')">
+                  <i class="home"><img src="images/icon-home.png"/></i>
+                  <span class="title">首页</span>
+                  <span class="selected"></span>
+              </a>
+          </li>
+
+          <li>
+              <a class="sideblk blk" href="javascript:void(0);">
+                  <i class="record"><img src="images/cogs.png"/></i>
+                  <span class="title">医院（机构）管理</span>
+                  <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+              </a>
+              <ul class="sub-menu">
+                  <li id="jglb">
+                      <a href="javascript:void(0);" onclick="go('hospitalList.html?jglb')">&nbsp;&nbsp;机构列表</a>
+                      <span class="listCount">(34)</span>
+                  </li>
+                  <li id="xzjg">
+                      <a href="javascript:void(0);" onclick="go('addHospitalEntity.html?xzjg')">&nbsp;&nbsp;新增机构</a>
+                  </li>
+                  <!--
+                  <li id="dxlbsz">
+                      <a href="javascript:void(0);" onclick="go('checkupCatogorySetting.html?dxlbsz')">&nbsp;&nbsp;体检单项类别</a>
+                  </li>
+                  <li id="dxlb">
+                      <a href="javascript:void(0);" onclick="go('checkupItemSetting.html?dxlb')">&nbsp;&nbsp;体检单项列表</a>
+                  </li>
+                -->
+              </ul>
+          </li>
+
+
+          <li>
+            <a class="sideblk blk" href="javascript:void(0);">
+                <i class="record"><img src="images/cogs.png"/></i>
+                <span class="title">套餐管理</span>
+                <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+            </a>
+            <ul class="sub-menu">
+              <li id="tclb">
+                <a href="javascript:void(0);" onclick="go('productList.html?tclb')">&nbsp;&nbsp;套餐列表</a>
+                              <span class="listCount">(34)</span>
+              </li>
+              <li id="xztc">
+                <a href="javascript:void(0);" onclick="go('addProduct.html?xztc')">&nbsp;&nbsp;新增普通套餐</a>
+              </li>
+
+              <li id="diyList">
+                    <a href="javascript:void(0);" onclick="go('diyProductList.html?diy')">&nbsp;&nbsp;自定义套餐列表</a>
+              </li>
+
+              <li id="diy">
+                <a href="javascript:void(0);" onclick="go('diyProduct.html?diy')">&nbsp;&nbsp;新增自定义套餐</a>
+              </li>
+
+              <li id="tcts">
+                <a href="javascript:void(0)" onclick="go('productPush.html')">&nbsp;&nbsp;套餐推送</a>
+              </li>
+            </ul>
+
+          </li>
+
+          <li>
+              <a class="sideblk blk" href="javascript:void(0);">
+                  <i class="record"><img src="images/cogs.png"/></i>
+                  <span class="title">体检排期</span>
+                  <span class="arrowicon"><img src="images/arrowdown.png"/></span>
+              </a>
+              <ul class="sub-menu">
+                  <li id="tjpq">
+                      <a href="javascript:void(0);" onclick="go('checkupSchedule.html?tjpq')">&nbsp;&nbsp;体检排期</a>
+                  </li>
+
+              </ul>
+          </li>
+      </ul>
+  </div>
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script src="js/leftside.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  var urlinfo=window.location.href; //获取当前页面的url
+  var words = urlinfo.split("?")[1];
+    console.log(words);
+  if(words == 'index'){
+    $("#"+words).attr("class","sideblk blk titactive");
+  }else{
+    $("#"+words).parent().attr("class","sub-menu subactive");
+    $("#"+words).attr("class","titactive");
+  }
+
+});
+
+function go(htmls){
+		top.location.href=htmls;
+}
+</script>

@@ -1,0 +1,125 @@
+.page-content{color: #666; padding: 20px 30px 0; margin-left: 270px; height: auto; overflow: auto; border-bottom: 1px solid #E3E3E3; font-size: 14px; position: relative;}
+.title1{line-height: 40px; border-bottom: 1px solid #E3E3E3; padding: 0 0 0 30px; color: #00afc7;}
+
+.info{overflow: hidden; padding: 0 0 0 30px;}
+.list{overflow: hidden; width: 100%;}
+.info p{color: #666; float: left; margin: 0 50px 0 0; line-height: 40px;}
+.info span{display: block; float: left; color: #00AFC7; cursor: pointer; line-height: 40px;}
+.info p input[type='text']{border: none; line-height: 40px; min-width: 300px; width: auto; overflow: visible; background: #fff; border-radius: 0;}
+.info p input:focus{border-bottom: 1px solid #E3E3E3; color: #999; border-radius: 0; }
+
+
+.imgBox{overflow: hidden; width: 198px; height: 148px; border: 1px solid #E3E3E3; border-radius: 5px; float: left; position: relative; margin: 20px 0;}
+.imgUp{width: 178px; height: 128px; position: absolute; top: 10px; left: 10px; cursor: pointer; border-radius: 5px;  background:#f7f7f7 url("../images/addImg1.png") no-repeat center center; background-size: 48px auto;}
+.size{float: left; margin: 150px 0 0 10px;}
+
+.toplist {
+	background: #E7E7E7;
+	padding: 10px 0;
+	height: 40px;
+	color: #333;
+}
+
+.tcxmtitle {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    margin: 20px 0 5px 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.xiangmuleibie {
+    text-align: left;
+    color: #00AFC7;
+    font-size: 16px;
+    line-height: 35px;
+}
+
+.ishas {
+    width: 25px;
+    height: 30px;
+    display: inline-block;
+    background: url(../images/kexuanduigou.png) center center no-repeat;
+}
+
+table tr td {
+    border: 1px #ccc solid;
+    line-height: 22px;
+    font-size: 12x;
+    color: #7B7B7B;
+		padding: 5px;
+		text-align: center;
+}
+.tcaddcontent {
+	width: 744px;
+	height: 498px;
+	float: left;
+	overflow: hidden;
+	margin: 0 0 0 10px;
+	border: 1px #ddd solid;
+	border-radius: 3px;
+	overflow-y: auto;
+}
+
+.tcaddscdiv {
+	width: 17px;
+	padding: 220px 10px 0 10px;
+	float: left;
+	overflow: hidden;
+}
+
+.tcaddscdiv .newaddan1 {
+	width: 17px;
+	height: 20px;
+	display: inline-block;
+	background: url(../images/newaddtcan2.png) center center no-repeat;
+	cursor: pointer;
+}
+
+.tcaddscdiv .newaddan2 {
+	width: 17px;
+	height: 20px;
+	display: inline-block;
+	background: url(../images/newaddtcan1.png) center center no-repeat;
+	cursor: pointer;
+}
+
+.tcxzlist p {
+	height: 20px;
+	line-height: 20px;
+	margin: 0 0 5px 0;
+	overflow: hidden;
+	clear: both;
+}
+
+.tcxzlist p input {
+	margin-bottom: 5px;
+}
+
+.tcxzlist {
+	width: 182px;
+	padding: 5px;
+	height: 488px;
+	border: 1px #ddd solid;
+	border-radius: 3px;
+	float: left;
+	overflow: hidden;
+	overflow-y: auto;
+	font-size: 12px;
+}
+div.tcaddcontent table tr td {
+	border: 1px #ccc solid;
+	line-height: 22px;
+	font-size: 12x;
+	color: #7B7B7B;
+	padding: 5px;
+	text-align: center;
+}
+
+.tcaddcontent .leftxmlist th, .tcaddcontent .leftxmlist tr, .tcaddcontent .leftxmlist tr td {
+	border: 1px #ddd solid;
+	line-height: 20px;
+	font-size: 12px;
+	font-weight: normal
+}

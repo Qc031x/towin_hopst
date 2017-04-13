@@ -1,0 +1,14 @@
+.page-content{color: #666; padding: 20px 30px 0; margin-left: 270px; height: 669px; overflow: auto; border-bottom: 1px solid #E3E3E3; font-size: 14px; position: relative;}
+.title1{line-height: 40px; border-bottom: 1px solid #E3E3E3; padding: 0 0 0 30px; color: #00afc7;}
+
+.info{overflow: hidden; padding: 0 0 0 30px;}
+.list{overflow: hidden; width: 100%;}
+.info p{color: #666; float: left; margin: 0 50px 0 0; line-height: 40px;}
+.info span{display: block; float: left; color: #00AFC7; cursor: pointer; line-height: 40px;}
+.info p input[type='text']{border: none; line-height: 40px; min-width: 300px; width: auto; overflow: visible; background: #fff; border-radius: 0;}
+.info p input:focus{border-bottom: 1px solid #E3E3E3; color: #999; border-radius: 0; }
+
+
+.imgBox{overflow: hidden; width: 198px; height: 148px; border: 1px solid #E3E3E3; border-radius: 5px; float: left; position: relative; margin: 20px 0;}
+.imgUp{width: 178px; height: 128px; position: absolute; top: 10px; left: 10px; cursor: pointer; border-radius: 5px;  background:#f7f7f7 url("../images/addImg1.png") no-repeat center center; background-size: 48px auto;}
+.size{float: left; margin: 150px 0 0 10px;}

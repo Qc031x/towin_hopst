@@ -1,0 +1,14 @@
+.checkdetail1{background:white;position: absolute;z-index: 110;top: 0;right: 0;width:600px;height: 100%;overflow: hidden;font-size: 12px;color: #666;box-shadow: 0 0 10px 0 #999;display: none;}
+.checkdetail1 .hd{width:100%;height:60px;line-height: 60px;text-align: center;background: #f7f7f7;font-size: 20px;color: #00AFC7;}
+.checkdetail1 .content{padding: 20px 30px 0;overflow: auto; font-size: 14px;}
+.checkdetail1 .content .title2{background: #f7f7f7; line-height: 40px; padding: 0 0 0 20px; color: #00AFC7;}
+.checkdetail1 .content .single{height:40px;line-height: 40px;width: 100%; padding: 0 0 0 20px;}
+.checkdetail1 .content .single select{width: 160px; line-height: normal; border: 1px solid #dcdcdd; margin: 0; outline: none; background: url("../images/express.png") no-repeat 136px center; background-size: 13px auto;}
+.checkdetail1 .content .single input{width: 148px; height: 20px; border: 1px solid #dcdcdd; padding: 4px 6px; color: #666;}
+.checkdetail1 .content .single input:focus{border: 1px solid #dcdcdd;}
+
+
+.checkdetail1 .manup{position: absolute;bottom: 0;right: 0;width: 100%;height: 60px;border-top: 1px solid #E3E3E3;background: white;}
+.manup span{display: inline-block;width:80px;height:30px;border-radius: 5px;line-height: 30px;margin-top: 15px;text-align: center;font-size: 14px;cursor: pointer;}
+.manup .save{margin-left: 180px;background: #00AFC7;color: #fff;}
+.manup .undo{margin-left: 64px;color: #666;border:1px solid #666;}

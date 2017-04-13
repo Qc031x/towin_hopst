@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>体检排期设置</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/calendar.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .search-body{height: 50px; line-height: 50px; padding: 0 0 0 24px; font-size: 12px; color: #333;}
+        .search-body .search-box{float: left; margin: 0 40px 0 0;}
+    </style>
+</head>
+
+<body>
+<div class="top">
+    <div class="left"><img src="images/logo.png" alt="logo" />天问企业预约平台-医生端
+        <span class="wel">欢迎<span>xx</span>登录天问企业预约平台-医生端！</span>
+    </div>
+    <div class="right"><img alt="退出登录" src="images/loginOut.png" /><span class="username">退出登录</span></div>
+</div>
+
+<div class="page-container">
+    <div class="page-sidebar nav-collapse collapse">
+        <iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="left.html?tjpq" height="669" width="270"></iframe>
+    </div>
+
+    <div class="page-content">
+        <div class="hds">分院体检排期</div>
+        <br>
+        <div class="search-body">
+            <!--
+            <form>
+                <div class="search-box">
+                    <span class="label label-primary-" style="height:25px;width:100px;">南山分院</span>
+                </div>
+                <div class="search-box">
+                    <span class="label label-primary" style="height:25px;width:100px;">福田分院</span>
+                </div>
+            </form>
+            -->
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" class="active"><a href="#">南山分院</a></li>
+                    <li role="presentation"><a href="#">福田分院</a></li>
+                    <li role="presentation"><a href="#">罗湖分院</a></li>
+                </ul>
+
+
+
+        </div>
+
+        <hr>
+
+        <div class="portlet-body">
+
+            <div class="yuyue_rili">
+                <div class="yue_tit">
+                    <div class="riliqiean1"></div>
+                    <div class="riliyear"><select class="xlxzrili" id="xlyear"></select> 年 <select class="xlxzrili" id="xlmonth"></select> 月</div>
+                    <div class="riliqiean2"></div>
+                </div>
+                <ul class="fixxingqi">
+                    <li>星期日</li>
+                    <li>星期一</li>
+                    <li>星期二</li>
+                    <li>星期三</li>
+                    <li>星期四</li>
+                    <li>星期五</li>
+                    <li>星期六</li>
+                </ul>
+                <div class="yue_rili">
+                    <ul class="yue_day">
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="riliclrig" style="margin:0 0 0 10px; width:230px;">
+                <div class="add_cldiv">
+                    <div class="rigcltit"><a class="active" href="javascript:void(0);" style="font-size:12px; padding:0 6px;">默认策略</a><a href="javascript:void(0);" style="font-size:12px; padding:0 6px;">休息策略</a><a href="javascript:void(0);" style="font-size:12px; padding:0 6px;">假日策略</a></div>
+                    <div class="rigcllist">
+
+                        <div class="list" style="display:block;">
+                            <div class="clmctit">默认策略<a class="rigxiugaicl" href="javascript:void(0);">修改</a></div>
+                            <div class="cldivcon">
+                                <div class="clshow">
+                                    <p>　　状态：可约</p>
+                                    <p>设定人数：<em id="showCount">100</em></p>
+                                    <p>暂停时间：<em id="showendTime"></em></p>
+                                </div>
+                                <div class="xiugaicon">
+                                    <p class="mrsdrs">设定人数：100</p>
+                                    <p>暂停时间：<select class="xlxzrili zttimes" id="hour1" onchange="getHour(this.value)"></select>17 时 <select class="xlxzrili zttimef" id="minute1" onchange="getMinute(this.value)"></select> 分 <select class="xlxzrili zttimem" id="second1" onchange="getSecond(this.value)"></select> 秒
+                                    </p>
+                                    <div class="clbcdiv">
+                                        <input type="hidden" id="updateHour" value="00"><a class="quxiao" href="javascript:void(0);">取消</a>
+                                        <a class="baocun" href="javascript:void(0);" onclick="updateDefaultPolicy()">保存</a>
+                                    </div>
+                                </div>
+                                <div class="tipscon">
+                                    <div class="tipstit">提示:</div>
+                                    <p>1、系统默认每天都为"可约"状态（当天除外），并限制可约人数为100人，超过100人即自动更改“已满”状态，点击“修改”可设置可约人数及暂停预约时间。</p>
+                                    <p>2、"暂停预约"是指因工作人员下班后无法处理客户预约第二天体检的信息，在此可设置每天某个时刻至次日某个时刻为暂定预约时段。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list" zdy="restPolicyList">
+                            <div class="clmctit">休息策略<a class="rigxiugaicl" href="javascript:void(0);">修改</a></div>
+                            <div class="cldivcon">
+                                <div class="clshow">
+                                    <p>休息日：
+                                        <em id="showday1">周一休息;</em>
+                                    </p>
+                                </div>
+                                <div class="xiugaicon">
+                                    <p>选择休息日：
+                                        <select class="xlxzrili" id="xiuxi1" onchange="getDay1(this.value)">
+                                            <option value="">请选择</option>
+                                            <option value="周一">周一休息</option>
+                                            <option value="周二">周二休息</option>
+                                            <option value="周三">周三休息</option>
+                                            <option value="周四">周四休息</option>
+                                            <option value="周五">周五休息</option>
+                                            <option value="周六">周六休息</option>
+                                            <option value="周日">周日休息</option>
+                                        </select>
+                                        <select class="xlxzrili" id="xiuxi2" onchange="getDay2(this.value)">
+                                            <option value="">请选择</option>
+                                            <option value="周一">周一休息</option>
+                                            <option value="周二">周二休息</option>
+                                            <option value="周三">周三休息</option>
+                                            <option value="周四">周四休息</option>
+                                            <option value="周五">周五休息</option>
+                                            <option value="周六">周六休息</option>
+                                            <option value="周日">周日休息</option>
+                                        </select>
+                                    </p>
+                                    <div class="clbcdiv">
+                                        <input type="hidden" id="updateDay1" value="${ infoMap.restPolicy.DAY1}">
+                                        <input type="hidden" id="updateDay2" value="${ infoMap.restPolicy.DAY2}">
+                                        <a class="quxiao" href="javascript:void(0);">取消</a>
+                                        <a class="baocun" href="javascript:void(0);" onclick="updateRestPolicy()">保存</a>
+                                    </div>
+                                </div>
+                                <div class="tipscon">
+                                    <div class="tipstit">提示:</div>
+                                    <p>点击“修改“按钮，可设置每周哪一天或两天为本机构固定休息时间，设置后日历会显示为：“休息”，客户是不能预约休息日体检的。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list" zdy="restPolicyList">
+                            <div class="clmctit">假日策略<a class="rigxiugaixz" href="javascript:void(0);">新增</a></div>
+                            <div class="cldivcon">
+                                    <div class="clshow" id="clshow">
+                                            <div class="jierilist" id="jieri1">
+                                                <p class="jrtit"><span class="jrmc">元旦节</span>
+                                                    <a class="rigxiugaicl2" href="javascript:getid('jieri1');">修改</a>
+                                                    <a class="rigxiugaicl3" href="javascript:delHolidayPolicy('jieri1');">删除</a>
+                                                </p>
+                                                <p>开始日期：<span class="kstime">2016年12月31日</span></p>
+                                                <p>结束日期：<span class="jstime">2016年1月2日</span></p>
+                                            </div>
+                                            <div class="jierilist" id="jieri2">
+                                                <p class="jrtit"><span class="jrmc">春节</span>
+                                                    <a class="rigxiugaicl2" href="javascript:getid('jieri2');">修改</a>
+                                                    <a class="rigxiugaicl3" href="javascript:delHolidayPolicy('jieri2');">删除</a>
+                                                </p>
+                                                <p>开始日期：<span class="kstime">2017年1月27日</span></p>
+                                                <p>结束日期：<span class="jstime">2017年2月3日</span></p>
+                                            </div>
+                                            <div class="jierilist" id="jieri3">
+                                                <p class="jrtit"><span class="jrmc">劳动节</span>
+                                                    <a class="rigxiugaicl2" href="javascript:getid('jieri3');">修改</a>
+                                                    <a class="rigxiugaicl3" href="javascript:delHolidayPolicy('jieri3');">删除</a>
+                                                </p>
+                                                <p>开始日期：<span class="kstime">2017年5月1日</span></p>
+                                                <p>结束日期：<span class="jstime">2017年5月3日</span></p>
+                                            </div>
+                                    </div>
+
+                                <div class="xiugaicon">
+                                    <p>开始时间：<input id="updateStartDate" class="inputk150 kstime" onclick="laydate(jqtime)"/></p>
+                                    <p>结束时间：<input id="updateEndDate" class="inputk150 jstime" onclick="laydate(jqtime)" /></p>
+                                    <p>假日名称：<input id="updateName" class="inputk150 jrmc" /></p>
+                                    <div class="clbcdiv">
+                                        <input type="hidden" id="updateid"/>
+                                        <input type="hidden" id="oldName"/>
+                                        <input type="hidden" id="oldStartDate"/>
+                                        <input type="hidden" id="oldEndDate"/>
+                                        <a class="quxiao" href="javascript:void(0);">取消</a>
+                                        <a class="baocun" href="javascript:void(0);" onclick="updateHolidayPolicy()">保存</a>
+                                    </div>
+                                </div>
+                                <div class="xinzengcon">
+                                    <p>开始时间：<input id="addStartDate" class="inputk150 kstime" onclick="laydate(jqtime)"/></p>
+                                    <p>结束时间：<input id="addEndDate" class="inputk150 jstime" onclick="laydate(jqtime)" /></p>
+                                    <p>假日名称：<input id="addName" class="inputk150 jrmc" /></p>
+                                    <div class="clbcdiv">
+                                        <a class="quxiao" href="javascript:void(0);">取消</a>
+                                        <a class="baocun" href="javascript:void(0);" onclick="addHolidayPolicy()">保存</a>
+                                    </div>
+                                </div>
+                                <div class="tipscon" style="border:none;">
+                                    <div class="tipstit">提示:</div>
+                                    <p>点击“修改“按钮，可设置某天或某个时间段为假日，并可自定义假日名称，如： “中秋”“春节”等</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="ykfooter">
+        <a href="#">帮助中心</a><span class="vertical">|</span>
+        <a href="#">关于我们</a><span class="vertical">|</span>
+        <a href="#">联系方式</a><span class="vertical">|</span><span class="ykcompely">天问信息技术（深圳）有限公司</span><span>&copy;&nbsp;2016&nbsp;浙&nbsp;B2-20080224-16</span>
+    </div>
+
+
+
+    <script src="js/jquery-1.11.1.min.js " type="text/javascript "></script>
+    <script src="js/bootstrap.min.js " type="text/javascript "></script>
+    <script src="js/pagination.js "></script>
+    <script src="js/leftside.js "></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/laydate/laydate.js"></script>
+    <script>
+        $(document).ready(function() {
+            //$(".tcdPageCode ").show();
+            $(".nav-pills li").click(function(){
+                $(this).addClass("active").siblings().removeClass("active");
+            })
+
+            calendar.getjiazairili(8);
+
+            $(".add_cldiv .rigcltit a").click(function(){
+                $(this).addClass('active').siblings("a").removeClass('active');
+                var sub_chindex = $(this).index();
+                $(".add_cldiv .rigcllist .list").eq(sub_chindex).show().siblings(".list").hide();
+            });
+
+            $(".rigcllist .list .clbcdiv .quxiao").click(function(){
+                $(this).parents(".cldivcon").find(".xiugaicon").slideUp();
+                $(this).parents(".list").find(".cldivcon .xinzengcon").slideUp();
+                $(this).parents(".cldivcon").find(".clshow").slideDown();
+            });
+            $(".rigcllist .list[zdy!='restPolicyList'] .clbcdiv .baocun").click(function(){
+                $(this).parents(".cldivcon").find(".xiugaicon").slideUp();
+                $(this).parents(".list").find(".cldivcon .xinzengcon").slideUp();
+                $(this).parents(".cldivcon").find(".clshow").slideDown();
+            });
+            $(".rigcllist .list .rigxiugaicl").click(function(){
+                $(this).parents(".list").find(".cldivcon .clshow").slideUp();
+                $(this).parents(".list").find(".cldivcon .xiugaicon").slideDown();
+            });
+            $(".rigcllist .list .rigxiugaixz").click(function(){
+                $(this).parents(".list").find(".cldivcon .clshow").slideUp();
+                $(this).parents(".list").find(".cldivcon .xiugaicon").slideUp();
+                $(this).parents(".list").find(".cldivcon .xinzengcon").slideDown();
+            });
+
+
+
+        });
+
+        function getid(id){
+            $("#updateid").val(id);
+        }
+
+        function rigxiugaic(){
+            $(".rigcllist .list .rigxiugaicl2").click(function(){
+                $(this).parents(".list").find(".cldivcon .clshow").slideUp();
+                var kstime=$(this).parents(".jierilist").find(".kstime").text();
+                var jstime=$(this).parents(".jierilist").find(".jstime").text();
+                var jrmc=$(this).parents(".jierilist").find(".jrmc").text();
+                $(this).parents(".list").find(".cldivcon .xiugaicon .kstime").val(kstime);
+                $(this).parents(".list").find(".cldivcon .xiugaicon .jstime").val(jstime);
+                $(this).parents(".list").find(".cldivcon .xiugaicon .jrmc").val(jrmc);
+                $(this).parents(".list").find(".cldivcon .xiugaicon").slideDown();
+                $("#oldName").val(jrmc);
+                $("#oldStartDate").val(kstime);
+                $("#oldEndDate").val(jstime);
+            });
+
+            $(".rigcllist .list .rigxiugaicl3").click(function(){
+                var kstime=$(this).parents(".jierilist").find(".kstime").text();
+                var jstime=$(this).parents(".jierilist").find(".jstime").text();
+                var jrmc=$(this).parents(".jierilist").find(".jrmc").text();
+                $("#oldName").val(jrmc);
+                $("#oldStartDate").val(kstime);
+                $("#oldEndDate").val(jstime);
+            });
+        }
+
+        function delHolidayPolicy(id){
+
+        }
+
+        function addHolidayPolicy(){
+
+        }
+
+        function updateHolidayPolicy(){
+
+        }
+
+        !function(){
+            laydate.skin('molv');
+        }();
+        var jqtime = {
+            format: 'YYYY-MM-DD',
+            max: '2099-06-16',
+            istoday: false,
+            choose: function(datas){
+                end.min = datas;
+                end.start = datas
+            }
+        };
+
+    </script>
+
+</body>
+
+</html>
